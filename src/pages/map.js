@@ -21,11 +21,13 @@ const NotFoundPage = () => {
   const [mapStyles, setMapStyles] = React.useState(mapInitialStyles)
   
   React.useEffect(() => {
-    
+
   })
 
   return (
     <main style={pageStyles}>
+      {
+        typeof window !== 'undefined' && MapContainer &&
       <MapContainer style={mapStyles} center={[22.302711, 114.177216]} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -37,6 +39,7 @@ const NotFoundPage = () => {
           </Popup>
         </Marker>
       </MapContainer>
+      }
     </main>
   )
 }
