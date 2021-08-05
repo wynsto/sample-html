@@ -125,13 +125,25 @@ const links = [
   },
 ]
 
+const initialCount = 0
 // markup
 const IndexPage = () => {
+
+
+  const [count, setCount] = React.useState(initialCount);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  React.useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+  });
+
+
   return (
-    <main style={pageStyles}>
+    <main style={pageStyles} onClick={() => setCount(prevCount => prevCount + 1)}>
       <title>Home Page</title>
       <h1 style={headingStyles}>
-        Congratulations
+        <span>Congratulations</span>
         <br />
         <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
         <span role="img" aria-label="Party popper emojis">
