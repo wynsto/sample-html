@@ -7,6 +7,8 @@
   Gatsby minimal starter
 </h1>
 
+[![CI](https://github.com/wynsto/sample-html/actions/workflows/main.yml/badge.svg)](https://github.com/wynsto/sample-html/actions/workflows/main.yml)
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
