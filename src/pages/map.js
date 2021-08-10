@@ -19,16 +19,27 @@ const mapInitialStyles = {
 const NotFoundPage = () => {
   
   const [mapStyles, setMapStyles] = React.useState(mapInitialStyles)
+  const [center, setCenter] = React.useState(null)
   
   React.useEffect(() => {
-
+    if(center) {
+      return
+    }
+    fetch('http://ip-api.com/json/')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(myJson);
+        setCenter([myJson.lat, myJson.lon])
+      });
   })
 
   return (
     <main style={pageStyles}>
       {
-        typeof window !== 'undefined' && MapContainer &&
-      <MapContainer style={mapStyles} center={[22.302711, 114.177216]} zoom={13} scrollWheelZoom={true}>
+        typeof window !== 'undefined' && MapContainer && center &&
+      <MapContainer style={mapStyles} center={center} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
