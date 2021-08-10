@@ -16,7 +16,7 @@ const mapInitialStyles = {
 }
 
 // markup
-const NotFoundPage = () => {
+const MapPage = () => {
   
   const [mapStyles, setMapStyles] = React.useState(mapInitialStyles)
   const [center, setCenter] = React.useState(null)
@@ -86,4 +86,4 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage
+export default MapPage
