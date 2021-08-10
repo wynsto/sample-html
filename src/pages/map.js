@@ -25,14 +25,45 @@ const NotFoundPage = () => {
     if(center) {
       return
     }
-    fetch('http://ip-api.com/json/')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(myJson) {
-        console.log(myJson);
-        setCenter([myJson.lat, myJson.lon])
-      });
+
+
+    // const cloudFlareApiKey = '5ac77f8a6325cc98fe0d3703e39e27a1c6b62'
+
+    // fetch('https://api.db-ip.com/v2/free/self').then(function(data) {
+    //   const jsonData = data.json()
+    //   console.log(jsonData);
+    //   return jsonData
+    // }).then((jsonData)=> {
+      
+    //   return jsonData
+    // });
+
+  //   fetch('https://www.cloudflare.com/cdn-cgi/trace').then((resp)=> {
+  //     return resp
+  //   }).then((data)=> {
+  //     data = data.body.trim().split('\n').reduce(function(obj, pair) {
+  //       pair = pair.split('=');
+  //       return obj[pair[0]] = pair[1], obj;
+  //     }, {});
+  //     console.log(data)
+  //   })
+  //   fetch('http://ip-api.com/json/')
+  //     .then(function(response) {
+  //       return response.json();
+  //     })
+  //     .then(function(myJson) {
+  //       console.log(myJson);
+  //       
+  //     });
+
+      fetch('https://ipapi.co/json/')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(myJson) {
+          console.log(myJson);
+          setCenter([myJson.latitude, myJson.longitude])
+        });
   })
 
   return (
