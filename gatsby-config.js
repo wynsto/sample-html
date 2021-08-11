@@ -62,6 +62,11 @@ module.exports = {
     //     },
     //   },
     // },
-    "gatsby-plugin-mdx",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
   ],
 };
