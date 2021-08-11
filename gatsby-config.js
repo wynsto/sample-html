@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://do.houyewei.com",
     title: "My Gatsby Site",
   },
   plugins: [
@@ -40,5 +40,28 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/blog/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/blog`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     defaultLayouts: {
+    //       posts: require.resolve("./src/components/layout.js"),
+    //       default: require.resolve("./src/components/layout.js"),
+    //     },
+    //   },
+    // },
+    "gatsby-plugin-mdx",
   ],
 };
