@@ -52,10 +52,10 @@ All functions have a special property named prototype
 
 instance's \_\_proto\_\_ point to constructor function's prototype
 
-Otherwise, if the __proto__ of doSomeInstancing does not have the property, then the __proto__ of the __proto__ of doSomeInstancing is checked for the property. By default, the __proto__ of any function's prototype property is window.Object.prototype. So, the __proto__ of the __proto__ of doSomeInstancing (a.k.a. the __proto__ of doSomething.prototype (a.k.a. Object.prototype)) is then looked through for the property being searched for.
+Otherwise, if the \__proto__ of doSomeInstancing does not have the property, then the \__proto__ of the \__proto__ of doSomeInstancing is checked for the property. By default, the \__proto__ of any function's prototype property is window.Object.prototype. So, the \__proto__ of the \__proto__ of doSomeInstancing (a.k.a. the \__proto__ of doSomething.prototype (a.k.a. Object.prototype)) is then looked through for the property being searched for.
 
 
-If the property is not found in the __proto__ of the __proto__ of doSomeInstancing, then the __proto__ of the __proto__ of the __proto__ of doSomeInstancing is looked through. However, there is a problem: the __proto__ of the __proto__ of the __proto__ of doSomeInstancing does not exist. Then, and only then, after the entire prototype chain of __proto__'s is looked through, and there are no more __proto__s does the browser assert that the property does not exist and conclude that the value at the property is undefined
+If the property is not found in the \__proto__ of the \__proto__ of doSomeInstancing, then the \__proto__ of the \__proto__ of the \__proto__ of doSomeInstancing is looked through. However, there is a problem: the \__proto__ of the \__proto__ of the \__proto__ of doSomeInstancing does not exist. Then, and only then, after the entire prototype chain of \__proto__'s is looked through, and there are no more __proto__s does the browser assert that the property does not exist and conclude that the value at the property is undefined
 
 ```
 var a = {a: 1};
