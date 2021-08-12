@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing-v2'
 
 import L from 'leaflet';
-if (L) {
+if (L && L.Icon &&  L.Icon.Default) {
   delete L.Icon.Default.prototype._getIconUrl;
 
   L.Icon.Default.mergeOptions({
