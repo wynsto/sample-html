@@ -1,7 +1,16 @@
 import * as React from "react"
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { BingLayer } from 'react-leaflet-bing-v2'
 
+import L from 'leaflet';
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png').default,
+    iconUrl: require('leaflet/dist/images/marker-icon.png').default,
+    shadowUrl: require('leaflet/dist/images/marker-shadow.png').default,
+});
 // styles
 const pageStyles = {
   color: "#232129",
@@ -20,7 +29,7 @@ const MapPage = () => {
   
   const [mapStyles, setMapStyles] = React.useState(mapInitialStyles)
   const [center, setCenter] = React.useState(null)
-  
+  const [text, setText] = React.useState('')
   React.useEffect(() => {
     if(center) {
       return
@@ -63,6 +72,7 @@ const MapPage = () => {
         .then(function(myJson) {
           console.log(myJson);
           setCenter([myJson.latitude, myJson.longitude])
+          setText(myJson.city + ' ' + myJson.region + '' + myJson.country_name + ' ' + myJson.org)
         });
   })
 
@@ -70,14 +80,11 @@ const MapPage = () => {
     <main style={pageStyles}>
       {
         typeof window !== 'undefined' && MapContainer && center &&
-      <MapContainer style={mapStyles} center={center} zoom={13} scrollWheelZoom={true}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={[22.302711, 114.177216]}>
+      <MapContainer style={mapStyles} center={center} zoom={10} scrollWheelZoom={true}>
+        <BingLayer bingkey="Am7D2syhNLibITjOzf1yxOwVeqr9juVysjL1M5J9q1igpLtOkqP8Oo1kvSawlNcM"></BingLayer>
+        <Marker position={center}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            {text}
           </Popup>
         </Marker>
       </MapContainer>
