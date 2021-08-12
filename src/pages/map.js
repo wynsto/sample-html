@@ -4,13 +4,16 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing-v2'
 
 import L from 'leaflet';
-delete L.Icon.Default.prototype._getIconUrl;
+if (L) {
+  delete L.Icon.Default.prototype._getIconUrl;
 
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png').default,
-    iconUrl: require('leaflet/dist/images/marker-icon.png').default,
-    shadowUrl: require('leaflet/dist/images/marker-shadow.png').default,
-});
+  L.Icon.Default.mergeOptions({
+      iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png').default,
+      iconUrl: require('leaflet/dist/images/marker-icon.png').default,
+      shadowUrl: require('leaflet/dist/images/marker-shadow.png').default,
+  });
+}
+
 // styles
 const pageStyles = {
   color: "#232129",
