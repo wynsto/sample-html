@@ -4,7 +4,10 @@ import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, LayersControl } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing-v2'
 
-const { BaseLayer } = LayersControl;
+if (LayersControl) {
+  const { BaseLayer } = LayersControl;
+}
+
 
 
 if (L && L.Icon &&  L.Icon.Default) {
