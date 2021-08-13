@@ -23,6 +23,11 @@ const Layout = ({ pageTitle, children }) => {
             </Link>
           </li>
           <li >
+            <Link to="/blog">
+              Blog
+            </Link>
+          </li>
+          <li >
             <Link to="/map">
               Map
             </Link>
