@@ -1,9 +1,12 @@
 import * as React from "react"
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import L from 'leaflet';
+import { MapContainer, TileLayer, Marker, Popup, LayersControl } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing-v2'
 
-import L from 'leaflet';
+const { BaseLayer } = LayersControl;
+
+
 if (L && L.Icon &&  L.Icon.Default) {
   delete L.Icon.Default.prototype._getIconUrl;
 
@@ -79,12 +82,27 @@ const MapPage = () => {
         });
   })
 
+  const bing_key = "Am7D2syhNLibITjOzf1yxOwVeqr9juVysjL1M5J9q1igpLtOkqP8Oo1kvSawlNcM"
+
   return (
     <main style={pageStyles}>
       {
         typeof window !== 'undefined' && MapContainer && center &&
       <MapContainer style={mapStyles} center={center} zoom={10} scrollWheelZoom={true}>
-        <BingLayer bingkey="Am7D2syhNLibITjOzf1yxOwVeqr9juVysjL1M5J9q1igpLtOkqP8Oo1kvSawlNcM"></BingLayer>
+        <LayersControl position='topright'>
+          <BaseLayer name='OpenStreetMap.Mapnik'>
+            <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"/>
+          </BaseLayer>
+          <BaseLayer checked name='Bing Maps Roads'>
+            <BingLayer bingkey={bing_key} type="Road"/>
+          </BaseLayer>
+          <BaseLayer checked name='Bing Maps Satelite'>
+            <BingLayer bingkey={bing_key} />
+          </BaseLayer>
+          <BaseLayer checked name='Bing Maps Satelite with Labels'>
+            <BingLayer bingkey={bing_key} type="AerialWithLabels" />
+          </BaseLayer>
+        </LayersControl>
         <Marker position={center}>
           <Popup>
             {text}
