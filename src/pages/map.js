@@ -94,7 +94,7 @@ const MapPage = () => {
       <MapContainer style={mapStyles} center={center} zoom={10} scrollWheelZoom={true}>
         <LayersControl position='topright'>
           <BaseLayer name='OpenStreetMap.Mapnik'>
-            <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"/>
+            <TileLayer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"/>
           </BaseLayer>
           <BaseLayer checked name='Bing Maps Roads'>
             <BingLayer bingkey={bing_key} type="Road"/>
