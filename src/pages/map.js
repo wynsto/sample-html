@@ -3,9 +3,9 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, LayersControl } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing-v2'
-
+let BaseLayer
 if (LayersControl) {
-  const { BaseLayer } = LayersControl;
+  BaseLayer = LayersControl.BaseLayer;
 }
 
 
