@@ -1,4 +1,6 @@
 import * as React from "react"
+import { graphql, Link } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 // styles
 const pageStyles = {
@@ -119,7 +121,7 @@ const links = [
 
 const initialCount = 0
 // markup
-const IndexPage = () => {
+const IndexPage = ({data}) => {
 
 
   const [count, setCount] = React.useState(initialCount);
@@ -135,21 +137,23 @@ const IndexPage = () => {
     <main style={pageStyles}>
       <div onClick={() => setCount(prevCount => prevCount + 1)} onKeyDown={()=> {}}>
         <title>Home Page</title>
-        <h1 style={headingStyles}>
-          <span>Congratulations</span>
-          <br />
-          <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-          <span role="img" aria-label="Party popper emojis">
-            🎉🎉🎉
-          </span>
-        </h1>
-        <p style={paragraphStyles}>
-          Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-          update in real-time.{" "}
-          <span role="img" aria-label="Sunglasses smiley emoji">
-            😎
-          </span>
-        </p>
+        <div>
+          {
+            data.allMdx.nodes.map((node) => (
+              <article key={node.id}>
+                <h2>
+                  <Link to={`/${node.slug}`}>
+                    {node.frontmatter.title}
+                  </Link>
+                </h2>
+                <p>Posted: {node.frontmatter.date}</p>
+                <MDXRenderer>
+                  {node.body}
+                </MDXRenderer>
+              </article>
+            ))
+          }
+        </div>
         <ul style={listStyles}>
           <li style={docLinkStyle}>
             <a
@@ -186,5 +190,21 @@ const IndexPage = () => {
     </main>
   )
 }
+
+export const query = graphql`
+  query {
+    allMdx(sort: {fields: id, order: DESC}) {
+      nodes {
+        id
+        body
+        slug
+        frontmatter {
+          date
+          title
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
