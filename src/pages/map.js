@@ -3,10 +3,13 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, LayersControl } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing-v2'
+import { StaticImage } from "gatsby-plugin-image"
+
 let BaseLayer
 if (LayersControl) {
   BaseLayer = LayersControl.BaseLayer;
 }
+
 
 
 
@@ -87,10 +90,19 @@ const MapPage = () => {
 
   const bing_key = "Am7D2syhNLibITjOzf1yxOwVeqr9juVysjL1M5J9q1igpLtOkqP8Oo1kvSawlNcM"
 
+  if (typeof window === 'undefined' || !MapContainer && !center) {
+    return (<div>
+        <StaticImage
+          alt="Loading"
+          src="../images/loading.svg"
+        />
+        <div>Loading</div>
+      </div>
+    )
+  }
   return (
     <main style={pageStyles}>
       {
-        typeof window !== 'undefined' && MapContainer && center &&
       <MapContainer style={mapStyles} center={center} zoom={10} scrollWheelZoom={true}>
         <LayersControl position='topright'>
           <BaseLayer name='OpenStreetMap.Mapnik'>
