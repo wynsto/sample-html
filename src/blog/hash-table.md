@@ -35,3 +35,63 @@ Yes, hashing function is just like…. MAGIC!
 
 What if Hashing Function produces duplicate hashed index for different keys?
 Oh well, too bad, Hashing Tables just need to learn and handle it… in its structure. By storing an array of tuples {key: value} in the hashed index, we can avoid overwriting existing values! :D Although it does make the structure more complicated and you need to loop through the tuples (a small loop) for retrieval, the time complexity of looping through tuples is small that it could be ignored.
+
+### dividing hashing
+
+### multiply hashing
+
+### universal hashing
+
+
+
+### open addressing
+
+#### probe sequence probing
+```
+
+HASH-INSERT(T, k)
+i = 0
+repeat
+    j = h(k, i)
+    if T[j] == NIL
+        T[j] = k
+        return j
+    else i = i + 1
+until i == m
+error "hash table overflow"
+
+
+HASH-SEARCH(T, k)
+i = 0
+repeat
+    j = h(k, j)
+    if T[j] == k
+        return k
+    i = i + 1
+until T[j] == NIL or i == m
+return NIL
+
+```
+
+#### linear probing
+
+```
+h(k, i) = (h'(k) + i)mod m, i = 0, 1, 2, ..., m - 1
+```
+
+problem:primary clustering
+
+#### quadratic probing
+
+```
+h(k, i) = (h'(k) + c1 * i + c2 * i *i)mod m
+```
+
+problem: secondary clustering
+
+#### double hashing
+
+```
+h(k, i) = (h1(k) + ih2(k))mod m
+```
+
