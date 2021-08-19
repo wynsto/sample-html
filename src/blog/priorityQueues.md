@@ -44,8 +44,7 @@ PQ.prototype.extractMax = function() {
   }
   const max = this.heap[0]
   this.heap[0] = this.heap[this.heap.length - 1]
-  console.log(this.heap)
-  // this.heap.length = this.heap.length - 1
+  this.heap.length = this.heap.length - 1
   heapfy(this.heap, 0)
   // console.log(this.heap)
   return max
@@ -107,5 +106,6 @@ console.log(heap.maximum())
 heap.extractMax()
 // console.log()
 console.log(heap.heap)
+
 
 ```
