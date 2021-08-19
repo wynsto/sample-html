@@ -1,9 +1,3 @@
----
-title: "Another Post"
-date: "2021-07-24"
----
-Here's another post! It's even better than the first one!
-```
 function parent(index) {
   return Math.floor((index-1)/ 2)
 }
@@ -102,5 +96,3 @@ console.log(max)
 console.log(heap.maximum())
 console.log(heap.heap.slice(0, 100))
 
-
-```
