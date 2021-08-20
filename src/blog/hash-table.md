@@ -10,6 +10,45 @@ JavaScript Object is
 JS objects and arrays — Which one is faster? 
 
 [JS objects and arrays — Which one is faster? ](https://sherryhsu.medium.com/js-objects-and-arrays-which-one-is-faster-cfcdb1281704)
+JS HashTable open addressing
+
+// HashTable is a subclass of FixedArray that implements a hash table
+// that uses open addressing and quadratic probing.
+//
+// In order for the quadratic probing to work, elements that have not
+// yet been used and elements that have been deleted are
+// distinguished.  Probing continues when deleted elements are
+// encountered and stops when unused elements are encountered.
+//
+// - Elements with key == undefined have not been used yet.
+// - Elements with key == the_hole have been deleted.
+//
+// The hash table class is parameterized with a Shape.
+// Shape must be a class with the following interface:
+//   class ExampleShape {
+//    public:
+//     // Tells whether key matches other.
+//     static bool IsMatch(Key key, Object other);
+//     // Returns the hash value for key.
+//     static uint32_t Hash(ReadOnlyRoots roots, Key key);
+//     // Returns the hash value for object.
+//     static uint32_t HashForObject(ReadOnlyRoots roots, Object object);
+//     // Convert key to an object.
+//     static inline Handle<Object> AsHandle(Isolate* isolate, Key key);
+//     // The prefix size indicates number of elements in the beginning
+//     // of the backing storage.
+//     static const int kPrefixSize = ..;
+//     // The Element size indicates number of elements per entry.
+//     static const int kEntrySize = ..;
+//     // Indicates whether IsMatch can deal with other being the_hole (a
+//     // deleted entry).
+//     static const bool kMatchNeedsHoleCheck = ..;
+//   };
+// The prefix size indicates an amount of memory in the
+// beginning of the backing storage that can be used for non-element
+// information by subclasses.
+
+[Big O Cheat Sheet](https://www.bigocheatsheet.com/)
 
 Objects and arrays are 2 basic data structures in JavaScript and both offer different methods for storing and retrieving data — at different speeds.
 Which data structure is more performant? Which one should I use in my code? Lets take a look at the time complexity involved.
