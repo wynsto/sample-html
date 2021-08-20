@@ -9,7 +9,7 @@ the basic dicitionary operations require O(1)
 JavaScript Object is 
 JS objects and arrays — Which one is faster? 
 
-https://sherryhsu.medium.com/js-objects-and-arrays-which-one-is-faster-cfcdb1281704
+[JS objects and arrays — Which one is faster? ](https://sherryhsu.medium.com/js-objects-and-arrays-which-one-is-faster-cfcdb1281704)
 
 Objects and arrays are 2 basic data structures in JavaScript and both offer different methods for storing and retrieving data — at different speeds.
 Which data structure is more performant? Which one should I use in my code? Lets take a look at the time complexity involved.

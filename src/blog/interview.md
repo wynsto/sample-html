@@ -1,5 +1,5 @@
 ---
-title: "Interview"
+title: "JavaScript"
 date: "2021-07-24"
 ---
 # JavaScript
