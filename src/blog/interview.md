@@ -1,5 +1,5 @@
 ---
-title: "JavaScript"
+title: "JavaScriptInterview"
 date: "2021-07-24"
 ---
 # JavaScript
@@ -74,3 +74,6 @@ console.log(d.hasOwnProperty);
 // undefined, because d doesn't inherit from Object.prototype
 
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTc1OTY0NTU3N119
+-->
