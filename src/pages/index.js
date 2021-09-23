@@ -53,11 +53,8 @@ export const query = graphql`
         }
       }
     }
-    site(siteMetadata: {}) {
-      id
+    site {
       siteMetadata {
-        description
-        siteUrl
         title
       }
     }
