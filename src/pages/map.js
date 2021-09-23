@@ -38,8 +38,6 @@ const mapInitialStyles = {
 
 // markup
 const MapPage = () => {
-  
-  const [mapStyles, setMapStyles] = React.useState(mapInitialStyles)
   const [center, setCenter] = React.useState(null)
   const [text, setText] = React.useState('')
   React.useEffect(() => {
@@ -90,7 +88,7 @@ const MapPage = () => {
 
   const bing_key = "Am7D2syhNLibITjOzf1yxOwVeqr9juVysjL1M5J9q1igpLtOkqP8Oo1kvSawlNcM"
 
-  if (typeof window === 'undefined' || !MapContainer && !center) {
+  if (typeof window === 'undefined' || (!MapContainer && !center)) {
     return (<div>
         <StaticImage
           alt="Loading"
@@ -103,7 +101,7 @@ const MapPage = () => {
   return (
     <main style={pageStyles}>
       {
-      <MapContainer style={mapStyles} center={center} zoom={10} scrollWheelZoom={true}>
+      <MapContainer style={mapInitialStyles} center={center} zoom={10} scrollWheelZoom={true}>
         <LayersControl position='topright'>
           <BaseLayer name='OpenStreetMap.Mapnik'>
             <TileLayer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"/>
