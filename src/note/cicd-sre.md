@@ -1,6 +1,6 @@
 ---
 title: "Continuous integration (CI) and continuous delivery (CD) and SRE"
-date: "2021-08-19"
+date: "2021-09-23"
 ---
 
 ## What is docker
@@ -9,7 +9,6 @@ Docker containers, wrap a piece of software in a complete filesystem that contai
 This guarantees that the software will always run the same, regardless of its environment.
 
 ## What is meant by Continuous Integration?
-Answer
 Continuous Integration (CI) is a development practice that requires developers to integrate code into a shared repository several times a day. Each check-in is then verified by an automated build, allowing teams to detect problems early.
 
 ## What is the need for DevOps?
@@ -22,7 +21,6 @@ Faster mean time to recovery in the event of new release crashing
 DevOps fulfills all these requirements and helps in achieving seamless software delivery. 
 
 ## Define Microservice Architecture
-
 Microservices, aka Microservice Architecture, is an architectural style that structures an application as a collection of small autonomous services, modeled around a business domain.
 
 ## How is DevOps different from Agile/SDLC?
@@ -46,23 +44,14 @@ Containerisation is a type of virtualization strategy that emerged as an alterna
 In containerization, the operating system is shared by the different containers rather than cloned for each virtual machine. For example Docker provides a container virtualization platform that serves as a good alternative to hypervisor-based arrangements.
 
 ## What is the difference between a Docker image and a container?
-Junior 
-Top 55 Docker Interview Questions  Docker  55  
-Answer
 An instance of an image is called a container. You have an image, which is a set of layers. If you start this image, you have a running container of this image. You can have many running containers of the same image.
 
 You can see all your images with docker images whereas you can see your running containers with docker ps (and you can see all containers with docker ps -a).
 
 ## What is the function of CI (Continuous Integration) server?
-Junior 
-Top 44 DevOps Interview Questions  DevOps  44  
-Answer
 CI server function is to continuously integrate all changes being made and committed to repository by different developers and check for compile errors. It needs to build code several times a day, preferably after every commit so it can detect which commit made the breakage if the breakage happens.
 
 ## Explain Blue-Green Deployment Technique
-Mid 
-Top 44 DevOps Interview Questions  DevOps  44  
-Answer
 Blue-green deployment is a technique that reduces downtime and risk by running two identical production environments called Blue and Green. At any time, only one of the environments is live, with the live environment serving all production traffic. For this example, Blue is currently live and Green is idle.
 
 As you prepare a new version of your software, deployment and the final stage of testing takes place in the environment that is not live: in this example, Green. Once you have deployed and fully tested the software in Green, you switch the router so all incoming requests now go to Green instead of Blue. Green is now live, and Blue is idle.
@@ -76,9 +65,6 @@ Docker can be used to build test boxes, during your deploy process to facilitate
 Docker can be used to provision boxes in the cloud, and with swarm you can orchestrate clusters too.
 
 ## What are the differences between continuous integration, continuous delivery, and continuous deployment?
-Mid 
-Top 44 DevOps Interview Questions  DevOps  44  
-Answer
 Developers practicing continuous integration merge their changes back to the main branch as often as possible. By doing so, you avoid the integration hell that usually happens when people wait for release day to merge their changes into the release branch.
 Continuous delivery is an extension of continuous integration to make sure that you can release new changes to your customers quickly in a sustainable way. This means that on top of having automated your testing, you also have automated your release process and you can deploy your application at any point of time by clicking on a button.
 Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your customers. There's no human intervention, and only a failed test will prevent a new change to be deployed to production.
