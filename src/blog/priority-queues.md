@@ -1,9 +1,9 @@
 ---
-title: "Another Post"
+title: "Priority Queues"
 date: "2021-07-24"
 ---
-Here's another post! It's even better than the first one!
-```
+Priority Queues written by js
+```js
 function parent(index) {
   return Math.floor((index-1)/ 2)
 }
