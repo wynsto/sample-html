@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://do.houyewei.com",
-    title: "My Gatsby Site",
+    siteUrl: "https://notes.houyewei.com",
+    title: "My Notes Site",
   },
   plugins: [
     "gatsby-plugin-theme-ui",
