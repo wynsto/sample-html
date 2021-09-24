@@ -52,16 +52,26 @@ const Layout = ({ pageTitle, children }) => {
     <StyletronProvider value={engine}>
       <BaseProvider theme={LightTheme}>
         <div className={css({
+          paddingTop: '50px'
         })}>
           <Helmet>
             <meta charSet="utf-8" />
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
           </Helmet>
+          <header  className={css({
+            paddingRight: "2rem",
+            position: 'fixed',
+            boxSizing: 'border-box',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            background: '#ffffffcc'
+          })}>
           <HeaderNavigation>
             <StyledNavigationList $align={ALIGN.left}>
               <StyledNavigationItem>
-                <header>{data.site.siteMetadata.title}</header>
+               {data.site.siteMetadata.title}
               </StyledNavigationItem>
             </StyledNavigationList>
             <StyledNavigationList $align={ALIGN.center} />
@@ -78,6 +88,7 @@ const Layout = ({ pageTitle, children }) => {
               </StyledNavigationItem>
             </StyledNavigationList>
           </HeaderNavigation>
+          </header>
           <main>
             {children}
           </main>

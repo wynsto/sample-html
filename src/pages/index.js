@@ -4,7 +4,8 @@ import Layout from '../components/layout'
 
 // styles
 const pageStyles = {
-  color: "#232129",  
+  color: "#232129",
+  padding: "0 1.5rem",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
