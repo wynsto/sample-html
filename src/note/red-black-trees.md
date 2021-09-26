@@ -37,9 +37,10 @@ SEARCH, MINIMUM, MAXIMUM, SUCCESSOR, and PREDECESSOR time O(lg n)
 height O(lg n)
 INSERT DELETE O(lg n)
 
-```
+```python
 
 LEFT-ROTATION(T, x)
+
 y = x.right                            // set y
 x.right = y.left                       // turn y's left subtree into x's right subtree
 if y.left != T.nil                     

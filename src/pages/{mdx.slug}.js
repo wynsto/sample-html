@@ -3,12 +3,23 @@ import { graphql } from 'gatsby' // highlight-line
 import Layout from '../components/layout'
 import { MDXRenderer } from 'gatsby-plugin-mdx' // highlight-line
 
+
+// styles
+const pageStyles = {
+  color: "#232129",
+  padding: "0 1.5rem",
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+}
+
+
 const BlogPost = ({data}) => {
   return (<Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>{data.mdx.frontmatter.date}</p>
-      <MDXRenderer>
-        {data.mdx.body}
-      </MDXRenderer>
+      <div style={pageStyles}>
+        <p>{data.mdx.frontmatter.date}</p>
+        <MDXRenderer>
+          {data.mdx.body}
+        </MDXRenderer>
+      </div>
     </Layout>)
 }
 
