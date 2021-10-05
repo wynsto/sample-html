@@ -13,7 +13,7 @@ const pageStyles = {
 
 
 const BlogPost = ({data}) => {
-  return (<Layout pageTitle={data.mdx.frontmatter.title}>
+  return (<Layout pageTitle={data.mdx.frontmatter.title} path={data.mdx.id}>
       <div style={pageStyles}>
         <h1>{data.mdx.frontmatter.title}</h1>
         <p>{data.mdx.frontmatter.date}</p>
@@ -28,6 +28,7 @@ const BlogPost = ({data}) => {
 export const query = graphql`
   query ($id: String) {
     mdx(id: {eq: $id}) {
+      id
       frontmatter {
         title
         date(formatString: "MMMM D, YYYY")

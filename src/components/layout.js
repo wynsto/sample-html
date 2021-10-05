@@ -19,7 +19,7 @@ import Aside from './aside'
 
 // const engine = new Styletron();
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ pageTitle, children, path }) => {
   const data = useStaticQuery(graphql`
   query {
     site {
@@ -47,7 +47,16 @@ const Layout = ({ pageTitle, children }) => {
   }, []);
 
   if (!engine) return null;
-
+  let utteranc = null
+  if (path) utteranc = (
+    <script src="https://utteranc.es/client.js"
+            repo="wynsto/sample-html"
+            issue-term={path}
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  )
 
   return (
     <StyletronProvider value={engine}>
@@ -96,7 +105,7 @@ const Layout = ({ pageTitle, children }) => {
             <Aside className={css({
               flex: 1
             })}></Aside>
-            <section>{children}</section>
+            <section>{children}{utteranc}</section>
           </main>
         </div>
       </BaseProvider>
