@@ -96,7 +96,7 @@ const Layout = ({ pageTitle, children }) => {
             <Aside className={css({
               flex: 1
             })}></Aside>
-            <content>{children}</content>
+            <section>{children}</section>
           </main>
         </div>
       </BaseProvider>
