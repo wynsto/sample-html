@@ -1,6 +1,7 @@
 ---
 title: "OAuth 2.0"
 date: "2021-09-24"
+tag: ['algo']
 ---
 
 # OAuth

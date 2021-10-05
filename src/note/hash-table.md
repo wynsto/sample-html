@@ -1,6 +1,7 @@
 ---
 title: "Hash Table"
 date: "2021-08-19"
+tag: ['algo']
 ---
 the average time to search for an element in a hash table is O(1)
 

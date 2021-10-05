@@ -1,6 +1,7 @@
 ---
 title: "Binary search trees"
 date: "2021-08-19"
+tag: ['algo']
 ---
 
 The search tree data structure supports many dynamic-set operations, including

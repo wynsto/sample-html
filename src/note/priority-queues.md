@@ -1,6 +1,7 @@
 ---
 title: "Priority Queues"
 date: "2021-07-24"
+tag: ['algo']
 ---
 Priority Queues written by js
 ```js

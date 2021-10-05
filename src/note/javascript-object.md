@@ -1,6 +1,7 @@
 ---
 title: "JavaScript Objects"
 date: "2021-07-24"
+tag: ['algo']
 ---
 
 [JavaScript Object](https://github.com/v8/v8/blob/master/src/objects/objects.h)

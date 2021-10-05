@@ -1,6 +1,7 @@
 ---
 title: "JavaScriptInterview"
 date: "2021-07-24"
+tag: ['algo']
 ---
 # JavaScript
 

@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Helmet } from "react-helmet"
+import * as React from 'react';
+import { Helmet } from "react-helmet";
 
 import {Provider as StyletronProvider} from 'styletron-react';
 import {LightTheme, BaseProvider, useStyletron} from 'baseui';
@@ -15,6 +15,7 @@ import { StyledLink } from "baseui/link";
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
+import Aside from './aside'
 
 // const engine = new Styletron();
 
@@ -28,9 +29,9 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   }
-`)
+`);
 
-  const [css, theme] = useStyletron()
+  const [css, theme] = useStyletron();
 
   const [engine, setEngine] = React.useState(null);
 
@@ -89,8 +90,13 @@ const Layout = ({ pageTitle, children }) => {
             </StyledNavigationList>
           </HeaderNavigation>
           </header>
-          <main>
-            {children}
+          <main className={css({
+            display: 'flex'
+          })}>
+            <Aside className={css({
+              flex: 1
+            })}></Aside>
+            <content>{children}</content>
           </main>
         </div>
       </BaseProvider>

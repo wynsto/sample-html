@@ -1,6 +1,7 @@
 ---
 title: "Continuous integration (CI) and continuous delivery (CD) and SRE"
 date: "2021-09-23"
+tag: ['devops']
 ---
 
 ## What is docker
