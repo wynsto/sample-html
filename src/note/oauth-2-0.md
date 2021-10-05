@@ -4,8 +4,6 @@ date: "2021-09-24"
 tag: ['algo']
 ---
 
-# OAuth
-
 * Third-party application: client-> app
 * HTTP service: HTTP provider -> interent service provider
 * Resouce Owner: user

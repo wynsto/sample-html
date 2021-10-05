@@ -15,6 +15,7 @@ const pageStyles = {
 const BlogPost = ({data}) => {
   return (<Layout pageTitle={data.mdx.frontmatter.title}>
       <div style={pageStyles}>
+        <h1>{data.mdx.frontmatter.title}</h1>
         <p>{data.mdx.frontmatter.date}</p>
         <MDXRenderer>
           {data.mdx.body}

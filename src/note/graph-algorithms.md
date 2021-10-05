@@ -4,8 +4,6 @@ date: "2021-08-20"
 tag: ['algo']
 ---
 
-# Graph Algorithms
-
 ## Breadth-first search
 Breadth-first search is one of the simplest algorithms for searching a graph and the archetype for manage important graph algorithms.
 
