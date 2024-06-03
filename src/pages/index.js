@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
+import AdSense from 'react-adsense';
 
 // styles
 const pageStyles = {

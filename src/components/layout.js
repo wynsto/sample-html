@@ -68,6 +68,8 @@ const Layout = ({ pageTitle, children, path }) => {
             <meta charSet="utf-8" />
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537733186606880"
+     crossorigin="anonymous"></script>
           </Helmet>
           <header  className={css({
             paddingRight: "2rem",
